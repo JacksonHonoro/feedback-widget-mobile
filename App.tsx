@@ -1,20 +1,24 @@
+import 'react-native-gesture-handler';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import React from 'react';
-import { Text, View, StatusBar } from 'react-native';
+import { SafeAreaView, StatusBar } from 'react-native';
 
 import { theme } from './src/theme';
 import { Widget } from './src/components/Widget';
 
 export default function App() {
     return (
-        <View
-            style={{
-                flex: 1,
-                backgroundColor: theme.colors.background,
-            }}
-        >
-            <StatusBar translucent backgroundColor="transparent" />
+        <GestureHandlerRootView style={{ flex: 1 }}>
+            <SafeAreaView
+                style={{
+                    flex: 1,
+                    backgroundColor: theme.colors.background,
+                }}
+            >
+                <StatusBar translucent backgroundColor="transparent" />
 
-            <Widget />
-        </View>
+                <Widget />
+            </SafeAreaView>
+        </GestureHandlerRootView>
     );
 }
