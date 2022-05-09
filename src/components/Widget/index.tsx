@@ -5,8 +5,13 @@ import BottomSheet from '@gorhom/bottom-sheet';
 
 import { theme } from '../../theme';
 import { Options } from '../Options';
+import { Form } from '../Form';
+import { Success } from '../Success';
+import { feedbackTypes } from '../../utils/feedbackTypes';
 
 import { styles } from './styles';
+
+export type FeedbackType = keyof typeof feedbackTypes;
 
 export function Widget() {
     const bottomSheetRef = useRef<BottomSheet>(null);
@@ -30,7 +35,7 @@ export function Widget() {
                 backgroundStyle={styles.modal}
                 handleIndicatorStyle={styles.indicator}
             >
-                <Options />
+                <Form feedbackType="BUG" />
             </BottomSheet>
         </>
     );
