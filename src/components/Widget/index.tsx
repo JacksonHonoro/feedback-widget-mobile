@@ -4,6 +4,7 @@ import { ChatTeardropDots } from 'phosphor-react-native';
 import BottomSheet from '@gorhom/bottom-sheet';
 
 import { theme } from '../../theme';
+import { Options } from '../Options';
 
 import { styles } from './styles';
 
@@ -28,7 +29,9 @@ export function Widget() {
                 snapPoints={[1, 280]}
                 backgroundStyle={styles.modal}
                 handleIndicatorStyle={styles.indicator}
-            />
+            >
+                <Options />
+            </BottomSheet>
         </>
     );
 }
