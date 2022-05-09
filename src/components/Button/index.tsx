@@ -6,11 +6,12 @@ import { styles } from './styles';
 
 interface Props extends TouchableOpacityProps {
     isLoading?: boolean;
+    onPress: () => void;
 }
 
-export function Button({ isLoading }: Props) {
+export function Button({ isLoading, onPress }: Props) {
     return (
-        <TouchableOpacity style={styles.container}>
+        <TouchableOpacity style={styles.container} onPress={onPress}>
             {isLoading ? (
                 <ActivityIndicator color={theme.colors.text_on_brand_color} />
             ) : (
